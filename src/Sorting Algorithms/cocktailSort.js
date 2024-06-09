@@ -41,7 +41,15 @@ const cocktailSort = (bars, algInterval) => {
 
   if (start >= end) {
     clearInterval(algInterval);
+    i = 0;
+    forward = true;
+    end = -1;
+    start = 0;
+    swapped = false;
+    return true;
   }
+
+  return false;
 };
 
 export default cocktailSort;

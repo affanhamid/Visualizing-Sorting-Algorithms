@@ -23,10 +23,18 @@ const bubbleSort = (bars, algInterval) => {
 
   j += 1;
   if (j >= bars.length - i - 1) {
-    if (!swapped) clearInterval(algInterval);
+    if (i >= bars.length) {
+      i = 0;
+      j = 0;
+      swapped = false;
+      clearInterval(algInterval);
+      return true;
+    }
     i += 1;
     j = 0;
   }
+
+  return false;
 };
 
 export default bubbleSort;
